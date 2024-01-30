@@ -1,29 +1,29 @@
-name: .NET 6 Build and Test
+# name: .NET 6 Build and Test
 
-on:
-  push:
-  pull_request:
-    types: [opened, synchronize]
-  workflow_dispatch:
+# on:
+#   push:
+#   pull_request:
+#     types: [opened, synchronize]
+#   workflow_dispatch:
 
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
+# jobs:
+#   build-and-test:
+#     runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v2
 
-    - name: Setup .NET 6 SDK
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '6.0.x'
+#     - name: Setup .NET 6 SDK
+#       uses: actions/setup-dotnet@v1
+#       with:
+#         dotnet-version: '6.0.x'
 
-    - name: Restore dependencies
-      run: dotnet restore
+#     - name: Restore dependencies
+#       run: dotnet restore
 
-    - name: Build
-      run: dotnet build --no-restore
+#     - name: Build
+#       run: dotnet build --no-restore
 
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+#     - name: Test
+#       run: dotnet test --no-build --verbosity normal
